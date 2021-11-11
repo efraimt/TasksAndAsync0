@@ -51,7 +51,7 @@ namespace Continue
 
 
         /// <summary>
-        /// This MAY run while we wating for tghe network operation
+        /// This MAY run while we wating for the network operation
         /// </summary>
         private static void DoSomthingWhileWating()
         {
