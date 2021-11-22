@@ -20,18 +20,23 @@ namespace Tasks0
 
 
             var num = 13;
-            
+
             Task.Run(() => Console.WriteLine(num = num * 3 - 30));
             Task.Factory.StartNew(() => Console.WriteLine(num = num * num * 3));
 
             //Use regulrly
             Task.Run(() => Console.WriteLine(num = num * 2 + 3));
 
-            Task<string> tsk1 = Task.Factory.StartNew(() => { return "Moshe"; });
-            //tsk1.Wait();
+            Task<string> tsk1 = Task.Factory.StartNew(() => { return DateTime.Now.ToString(); });
+         
+            Console.WriteLine("While waiting");
+
+            tsk1.Wait();
+            Console.WriteLine(tsk1.Result);
+
             Task.WaitAny(task, tsk1);
             Console.WriteLine(tsk1.Result);
-            
+
 
 
 

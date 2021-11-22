@@ -25,19 +25,21 @@ namespace Continue
             /*********************************************************************************************** 
              * CODE NUMBER (1) - The old Task.ContinueWith way of achiving Async operations while waiting
              * *********************************************************************************************/
-            DoSyncOperation();
-            var task = GetWebOldWay();
-            DoSomthingWhileWating();
-            task.Wait(); //if we don't wait for task, we dont get the message about the length of our url
+            //DoSyncOperation();
+            //var task = GetWebOldWay();
+            //DoSomthingWhileWating();
+            //task.Wait(); //if we don't wait for task, we dont get the message about the length of our url
 
-            
+
             /*********************************************************************************************** 
              * (2) async await keywords to achive the same as above in a syntax that it's almost like "regular"
              * *********************************************************************************************/
-            //DoSyncOperation();
-            //var task = GetWebAsync();
-            //DoSomthingWhileWating();
-            //task.Wait(); //if we don't wait for task, we dont get the message about the length of our url
+            DoSyncOperation();
+            var task = GetWebAsync();
+            DoSomthingWhileWating();
+            
+            
+            task.Wait(); //if we don't wait for task, we dont get the message about the length of our url
 
         }
 
